@@ -6,7 +6,7 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Arun Gupta: Hello World!");
+            Console.WriteLine("Arun G: Hello World!");
         }
     }
 }
