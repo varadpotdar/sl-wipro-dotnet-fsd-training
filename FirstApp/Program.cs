@@ -6,8 +6,8 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Arun G: Hello World!");
-            
+            Console.WriteLine("Arun G: Hello World!\n");
+
             Console.WriteLine("Ankisetty Lavanya: Hello World!");
             Console.WriteLine("Atharva Pawar: Hello World!");
             Console.WriteLine("Atharva Pawar: Hello World!");
@@ -23,8 +23,9 @@ namespace FirstApp
             Console.WriteLine("sivani: Hello World!");
             Console.WriteLine("Sowmya G: Hello World!");
             Console.WriteLine("Tejoram N: Hello All :)");
-            Console.WriteLine("Venkateswari N: Hello World!")
-            Console.WriteLine("Vignesh Kumar: hello world!")
+            Console.WriteLine("Venkateswari N: Hello World!");
+            Console.WriteLine("Vignesh Kumar: hello world!");
             Console.WriteLine("Yamini D: Hi Everyone!!");
         }
+    }
 }
