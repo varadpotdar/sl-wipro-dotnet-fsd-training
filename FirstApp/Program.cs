@@ -14,7 +14,7 @@ namespace FirstApp
             Console.WriteLine("Gaurav Gambhir: Hello World!");
             Console.WriteLine("Mohan K: Hello World!");
             Console.WriteLine("Prasanna : Hello World!");
-            Console.WriteLine("Likhitha: Hello World!\n");
+            Console.WriteLine("Likhitha: Hello World!");
             Console.WriteLine("R.V.Pranay");
             Console.WriteLine("Raj Shrivastva: Hello World!");
             Console.WriteLine("Rajesh Yandigeri: Hello World!");
