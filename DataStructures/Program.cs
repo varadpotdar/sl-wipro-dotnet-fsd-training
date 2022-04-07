@@ -8,8 +8,105 @@ namespace DataStructures
         static void Main(string[] args)
         {
             //ArrayDemo();
-            
-            LinkedListDemo();
+
+            //LinkedListDemo();
+
+            //Linear Search
+            //int search = 0;
+            //Console.WriteLine("Marks list: { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 }");
+            //do
+            //{
+            //    Console.Write("Enter marks to search and press enter: ");
+            //    string input = Console.ReadLine();
+            //    search = Int32.Parse(input);
+            //    Console.WriteLine($"Marks {search} was found at position {FindThroughLinearSearch(search)} in the array.");
+            //}
+            //while (search > 0);
+
+            //sort numbers
+            //int[] target = { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
+
+            //Console.WriteLine("Unsorted array ------");
+            //ShowArray(target);
+
+            //target = BubbleSort(target);
+
+            //Console.WriteLine("Sorted array ------");
+            //ShowArray(target);
+
+            //binary search
+            int search = 0;
+            Console.WriteLine("Marks list: { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 }");
+            do
+            {
+                Console.Write("Enter marks to search and press enter: ");
+                string input = Console.ReadLine();
+                search = Int32.Parse(input);
+                Console.WriteLine($"Marks {search} was found at position {FindThroughBinarySearch(search)} in the array.");
+            }
+            while (search > 0);
+        }
+
+        static int FindThroughBinarySearch(int findNumber)
+        {
+            int[] marks = new int[10] { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
+
+            marks = BubbleSort(marks);
+
+            int minNum = 0;
+            int maxNum = marks.Length - 1;
+
+            int foundElem = -1;
+
+            while (minNum <= maxNum && foundElem == -1)
+            {
+                int mid = (minNum + maxNum) / 2;
+                if (findNumber == marks[mid])
+                {
+                    foundElem = ++mid;
+                    break;
+                }
+                else if (findNumber < marks[mid])
+                {
+                    maxNum = mid - 1;
+                }
+                else
+                {
+                    minNum = mid + 1;
+                }
+            }
+
+            return foundElem;
+        }
+
+        static int[] BubbleSort(int[] targetArray)
+        {
+            for (int i = 0; i < targetArray.Length - 1; i++)
+            {
+                for (int j = i + 1; j < targetArray.Length; j++)
+                {
+                    if (targetArray[i] > targetArray[j])
+                    {
+                        //swap
+                        int temp = targetArray[i];
+                        targetArray[i] = targetArray[j];
+                        targetArray[j] = temp;
+                    }
+                }
+            }
+
+            return targetArray;
+        }
+
+        static void ShowArray(int[] targetArray)
+        {
+            string arrayString = "";
+            for (int i = 0; i < targetArray.Length; i++)
+            {
+                arrayString += targetArray[i].ToString() + ",";
+            }
+
+            Console.WriteLine($"Array: {arrayString.Substring(0, arrayString.Length - 1)}");
         }
 
         static void ArrayDemo()
@@ -88,5 +185,23 @@ namespace DataStructures
             }
         }
 
+        /// <summary>
+        /// Search the passed number in an array of number using Linear Search
+        /// </summary>
+        /// <param name="findNumber"></param>
+        /// <returns>Returns position in the array or -1</returns>
+        static int FindThroughLinearSearch(int findNumber)
+        {
+            int[] marks = new int[10] { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
+            
+            for (int i = 0; i < marks.Length; i++)
+            {
+                if (marks[i] == findNumber)
+                    return i;
+            }
+            return -1;
+        }
+
+        
     }
 }
