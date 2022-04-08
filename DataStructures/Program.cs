@@ -29,14 +29,14 @@ namespace DataStructures
             //Console.WriteLine("Unsorted array ------");
             //ShowArray(target);
 
-            //target = BubbleSort(target);
+            //SelectionSort(target);
 
             //Console.WriteLine("Sorted array ------");
             //ShowArray(target);
 
             //binary search
             int search = 0;
-            Console.WriteLine("Marks list: { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 }");
+            Console.WriteLine("Marks list: 56 67 67 76 79 82 83 88 90 98");
             do
             {
                 Console.Write("Enter marks to search and press enter: ");
@@ -51,7 +51,7 @@ namespace DataStructures
         {
             int[] marks = new int[10] { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
 
-            marks = BubbleSort(marks);
+            marks = SelectionSort(marks);
 
             int minNum = 0;
             int maxNum = marks.Length - 1;
@@ -79,7 +79,7 @@ namespace DataStructures
             return foundElem;
         }
 
-        static int[] BubbleSort(int[] targetArray)
+        static int[] SelectionSort(int[] targetArray)
         {
             for (int i = 0; i < targetArray.Length - 1; i++)
             {
@@ -87,10 +87,7 @@ namespace DataStructures
                 {
                     if (targetArray[i] > targetArray[j])
                     {
-                        //swap
-                        int temp = targetArray[i];
-                        targetArray[i] = targetArray[j];
-                        targetArray[j] = temp;
+                        Swap(targetArray, i, j);
                     }
                 }
             }
@@ -98,15 +95,29 @@ namespace DataStructures
             return targetArray;
         }
 
+        static void Swap(int[] targetArray, int i, int j)
+        {
+            int temp = targetArray[i];
+            targetArray[i] = targetArray[j];
+            targetArray[j] = temp;
+        }
+        
+
         static void ShowArray(int[] targetArray)
         {
-            string arrayString = "";
-            for (int i = 0; i < targetArray.Length; i++)
-            {
-                arrayString += targetArray[i].ToString() + ",";
-            }
+            //Way 1
+            //string arrayString = "";
+            //for (int i = 0; i < targetArray.Length; i++)
+            //{
+            //    arrayString += targetArray[i].ToString() + ",";
+            //}
 
-            Console.WriteLine($"Array: {arrayString.Substring(0, arrayString.Length - 1)}");
+            //Console.WriteLine($"Array: {arrayString.Substring(0, arrayString.Length - 1)}");
+
+            //way 2
+            for (int i = 0; i < targetArray.Length; i++)
+                Console.Write(targetArray[i] + " ");
+            Console.WriteLine();
         }
 
         static void ArrayDemo()
@@ -201,7 +212,6 @@ namespace DataStructures
             }
             return -1;
         }
-
         
     }
 }
