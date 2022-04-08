@@ -24,34 +24,34 @@ namespace DataStructures
             //while (search > 0);
 
             //sort numbers
-            //int[] target = { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
+            int[] target = { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
 
-            //Console.WriteLine("Unsorted array ------");
-            //ShowArray(target);
+            Console.WriteLine("Unsorted array ------");
+            ShowArray(target);
 
-            //SelectionSort(target);
+            BubbleSort(target);
 
-            //Console.WriteLine("Sorted array ------");
-            //ShowArray(target);
+            Console.WriteLine("Sorted array ------");
+            ShowArray(target);
 
             //binary search
-            int search = 0;
-            Console.WriteLine("Marks list: 56 67 67 76 79 82 83 88 90 98");
-            do
-            {
-                Console.Write("Enter marks to search and press enter: ");
-                string input = Console.ReadLine();
-                search = Int32.Parse(input);
-                Console.WriteLine($"Marks {search} was found at position {FindThroughBinarySearch(search)} in the array.");
-            }
-            while (search > 0);
+            //int search = 0;
+            //Console.WriteLine("Marks list: 56 67 67 76 79 82 83 88 90 98");
+            //do
+            //{
+            //    Console.Write("Enter marks to search and press enter: ");
+            //    string input = Console.ReadLine();
+            //    search = Int32.Parse(input);
+            //    Console.WriteLine($"Marks {search} was found at position {FindThroughBinarySearch(search)} in the array.");
+            //}
+            //while (search > 0);
         }
 
         static int FindThroughBinarySearch(int findNumber)
         {
             int[] marks = new int[10] { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
 
-            marks = SelectionSort(marks);
+            SelectionSort(marks);
 
             int minNum = 0;
             int maxNum = marks.Length - 1;
@@ -63,7 +63,7 @@ namespace DataStructures
                 int mid = (minNum + maxNum) / 2;
                 if (findNumber == marks[mid])
                 {
-                    foundElem = ++mid;
+                    foundElem = mid;
                     break;
                 }
                 else if (findNumber < marks[mid])
@@ -79,7 +79,7 @@ namespace DataStructures
             return foundElem;
         }
 
-        static int[] SelectionSort(int[] targetArray)
+        static void SelectionSort(int[] targetArray)
         {
             for (int i = 0; i < targetArray.Length - 1; i++)
             {
@@ -92,7 +92,22 @@ namespace DataStructures
                 }
             }
 
-            return targetArray;
+        }
+
+        static void BubbleSort(int[] targetArray)
+        {
+            for (int i = 1; i < targetArray.Length; i++)
+            {
+                for (int j = 0; j < targetArray.Length - i; j++)
+                {
+                    if (targetArray[j] > targetArray[j + 1])
+                    {
+                        Swap(targetArray, j, j + 1);
+                    }
+                }
+                Console.Write($"Pass {i}: ");
+                ShowArray(targetArray);
+            }
         }
 
         static void Swap(int[] targetArray, int i, int j)
