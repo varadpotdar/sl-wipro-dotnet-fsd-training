@@ -23,18 +23,18 @@ namespace DataStructures
             //while (search > 0);
 
             //sort numbers =====================
-            int[] target = { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
+            //int[] target = { 56, 90, 76, 88, 82, 67, 98, 83, 67, 79 };
 
-            Console.WriteLine("Unsorted array ------");
-            ShowArray(target);
+            //Console.WriteLine("Unsorted array ------");
+            //ShowArray(target);
 
-            //SelectionSort(target);
-            //BubbleSort(target);
-            //MergeSort(target, 0, 9);
-            QuickSort(target, 0, 9);
+            ////SelectionSort(target);
+            ////BubbleSort(target);
+            ////MergeSort(target, 0, 9);
+            //QuickSort(target, 0, 9);
 
-            Console.WriteLine("Sorted array ------");
-            ShowArray(target);
+            //Console.WriteLine("Sorted array ------");
+            //ShowArray(target);
 
             //binary search =====================
             //int search = 0;
@@ -49,21 +49,21 @@ namespace DataStructures
             //while (search > 0);
 
             //Student Project =====================
-            //string[] cities = StudentProject.ReadCities();
-            //Console.WriteLine("Unsorted cities ------");
-            //StudentProject.DisplayCities(cities);
-            //StudentProject.SortCities(cities);
-            //Console.WriteLine("Unsorted cities ------");
-            //StudentProject.DisplayCities(cities);
+            string[] cities = StudentProject.ReadCities();
+            Console.WriteLine("Unsorted cities ------");
+            StudentProject.DisplayCities(cities);
+            StudentProject.SortCities(cities);
+            Console.WriteLine("Sorted cities ------");
+            StudentProject.DisplayCities(cities);
 
-            //string input = "";
-            //do
-            //{
-            //    Console.Write("Enter city to search and press enter: ");
-            //    input = Console.ReadLine();
-            //    Console.WriteLine($"City {input} was found at position {StudentProject.FindCity(cities, input)} in the array.");
-            //}
-            //while (input != "end");
+            string input = "";
+            do
+            {
+                Console.Write("Enter city to search and press enter: ");
+                input = Console.ReadLine();
+                Console.WriteLine($"City {input} was found at position {StudentProject.FindCity(cities, input)} in the array.");
+            }
+            while (input != "end");
         }
 
         #region Searching
