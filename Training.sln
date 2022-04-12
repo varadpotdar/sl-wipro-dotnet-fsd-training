@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "DataStruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpPractice", "CSharpPractice\CSharpPractice.csproj", "{7093F2CA-16A4-43DE-A117-18EBED8D6C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OopsUsingCSharp", "OopsUsingCSharp\OopsUsingCSharp.csproj", "{779A3E47-B0A1-4E04-8947-2DAFE3FD4601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OopsUsingCSharp", "OopsUsingCSharp\OopsUsingCSharp.csproj", "{779A3E47-B0A1-4E04-8947-2DAFE3FD4601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OopsProject", "OopsProject\OopsProject.csproj", "{2AFB726E-4B7B-4612-B952-4BB4A1F27BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{779A3E47-B0A1-4E04-8947-2DAFE3FD4601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{779A3E47-B0A1-4E04-8947-2DAFE3FD4601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{779A3E47-B0A1-4E04-8947-2DAFE3FD4601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AFB726E-4B7B-4612-B952-4BB4A1F27BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AFB726E-4B7B-4612-B952-4BB4A1F27BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AFB726E-4B7B-4612-B952-4BB4A1F27BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AFB726E-4B7B-4612-B952-4BB4A1F27BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
