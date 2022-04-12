@@ -9,6 +9,5 @@
             get { return whichClass; }
             set { whichClass = value; }
         }
-
     }
 }

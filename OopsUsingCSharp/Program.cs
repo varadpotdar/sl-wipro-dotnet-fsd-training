@@ -19,10 +19,119 @@ namespace OopsUsingCSharp
 
             //Console.WriteLine(person.FullName); //getter
 
-            StudentStructureDemo();
-            StudentClassDemo();
+            //StudentStructureDemo();
+            //StudentClassDemo();
+
+            //Animal myAnimal = new Animal();  // Create a Animal object
+            //Animal myPig = new Pig();  // Create a Pig object
+            //Animal myDog = new Dog();  // Create a Dog object
+
+            //myAnimal.animalSound();
+            //myPig.animalSound();
+            //myDog.animalSound();
+
+            //Pig2 myPig2 = new Pig2(); // Create a Pig object
+            //myPig2.animalSound();  // Call the abstract method
+            //myPig2.sleep();  // Call the regular method
+
+            //Dog3 myDog3 = new Dog3();
+            //myDog3.animalSound();
+
+            //try
+            //{
+            //    int[] myNumbers = { 1, 2, 3 };
+            //    Console.WriteLine(myNumbers[10]);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Something went wrong.");
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("The 'try catch' is finished.");
+            //}
+
+            //PolymorphismDemo();
+
+            //InterfaceDemo();
+
+            InterfaceModifiedToAbstractDemo();
         }
 
+        static void InterfaceDemo() 
+        {
+            Teacher2 teacher = new Teacher2();
+            teacher.Name = "Mr.Teacher";
+            teacher.Address = "some address";
+            teacher.DateOfJoining = DateTime.Today;
+
+            Student2 student = new Student2();
+            student.Name = "Student name";
+            student.Address = "some address";
+            student.DateOfJoining = DateTime.Today;
+
+            OfficeStaff staff = new OfficeStaff();
+            staff.Name = "Mr.Staff";
+            staff.Address = "some address";
+            staff.DateOfJoining = DateTime.Today;
+
+            Console.WriteLine(teacher.getInfo() + "\n" + teacher.getTypeOfPerson());
+            Console.WriteLine(student.getInfo() + "\n" + student.getTypeOfPerson());
+            Console.WriteLine(staff.getInfo() + "\n" + staff.getTypeOfPerson());
+        }
+
+        static void InterfaceModifiedToAbstractDemo()
+        {
+            DerivedTeacher teacher = new DerivedTeacher();
+            teacher.Name = "Mr.Teacher";
+            teacher.Address = "some address";
+            teacher.DateOfJoining = DateTime.Today;
+
+            DerivedStudent student = new DerivedStudent();
+            student.Name = "Student name";
+            student.Address = "some address";
+            student.DateOfJoining = DateTime.Today;
+
+            DerivedStaff staff = new DerivedStaff();
+            staff.Name = "Mr.Staff";
+            staff.Address = "some address";
+            staff.DateOfJoining = DateTime.Today;
+
+            Console.WriteLine(teacher.getInfo() + "\n" + teacher.getTypeOfPerson());
+            Console.WriteLine(student.getInfo() + "\n" + student.getTypeOfPerson());
+            Console.WriteLine(staff.getInfo() + "\n" + staff.getTypeOfPerson());
+        }
+
+        static void PolymorphismDemo()
+        {
+            ElementarySchoolGradeCard elementary = new ElementarySchoolGradeCard();
+            elementary.Maths = 90;
+            elementary.English = 78;
+            elementary.SecondLanguage = 80;
+            elementary.SocialScience = 67;
+            Console.WriteLine("total marks =" +
+                              elementary.getTotalMarks());
+
+            MiddleSchoolGradeCard middle = new MiddleSchoolGradeCard();
+            middle.Maths = 90;
+            middle.English = 78;
+            middle.SecondLanguage = 80;
+            middle.Geography = 87;
+            middle.History = 76;
+            Console.WriteLine("total marks =" + middle.getTotalMarks());
+
+            HighSchoolGradeCard high = new HighSchoolGradeCard();
+            high.Maths = 90;
+            high.English = 78;
+            high.SecondLanguage = 80;
+            high.Geography = 87;
+            high.History = 76;
+            high.Physics = 90;
+            high.Chemistry = 76;
+            high.Biology = 70;
+            Console.WriteLine("total marks =" + high.getTotalMarks());
+
+        }
         static void StudentClassDemo()
         {
             string[] arrSubjects = { "English Literature", "English Language", "Maths", "Geography", "History", "Physics", "Chemistry", "Biology" };
