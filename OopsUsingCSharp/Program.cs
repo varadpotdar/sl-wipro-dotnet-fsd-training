@@ -55,7 +55,30 @@ namespace OopsUsingCSharp
 
             //InterfaceDemo();
 
-            InterfaceModifiedToAbstractDemo();
+            //InterfaceModifiedToAbstractDemo();
+
+            //Teacher teacher1 = new Teacher();
+            //teacher1.Name = "Mr. Bakshi";
+            //teacher1.ContactAddress = "Chennai";
+            //teacher1.DateOfJoining = DateTime.Now;
+
+            //Teacher teacher2 = new Teacher();
+            //teacher2.Name = "Mr. Bakshi";
+            //teacher2.ContactAddress = "Assam";
+            //teacher2.DateOfJoining = DateTime.Now;
+
+            //Car car = new Car();
+            
+            ////Console.WriteLine(teacher1.Equals(teacher2));
+            //Console.WriteLine(teacher1.Equals(car));
+
+            DateTime dateTime = DateTime.Now;
+
+            Console.WriteLine(dateTime.IsLeapYear());
+
+            Console.WriteLine("We are in the .Net FSD training!".GetWordCount());
+
+            Extensions.GetWordCount("We are in the .Net FSD training!");
         }
 
         static void InterfaceDemo() 
