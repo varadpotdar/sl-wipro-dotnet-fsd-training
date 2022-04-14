@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WiproExtensions;
 
 namespace OopsUsingCSharp
 {
@@ -79,6 +80,10 @@ namespace OopsUsingCSharp
             Console.WriteLine("We are in the .Net FSD training!".GetWordCount());
 
             Extensions.GetWordCount("We are in the .Net FSD training!");
+
+            DateTimeHelper.IsLeapYear(DateTime.Now);
+
+            DateTime.Now.IsLeapYear();
         }
 
         static void InterfaceDemo() 
