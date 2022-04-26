@@ -1,0 +1,17 @@
+{
+  "name": "type-script-practice",
+  "version": "0.0.0",
+  "description": "TypeScriptPractice",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "typescript": "^4.0.5"
+  }
+}
