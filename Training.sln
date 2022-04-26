@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OopsProject", "OopsProject\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{0E9BA8BE-70C7-483C-8717-730F101996DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetDemo", "NugetDemo\NugetDemo.csproj", "{EAE4106F-DFB5-483C-97E5-1CB6A1EF8D6E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WiproExtensions", "WiproExtensions\WiproExtensions.csproj", "{C59E89A6-A0D7-49FE-A9B1-2572BDCFA3F0}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "JavaScriptPractice", "JavaScriptPractice\JavaScriptPractice.njsproj", "{679834BC-928B-44CD-A56B-B8034254246D}"
@@ -57,10 +55,6 @@ Global
 		{0E9BA8BE-70C7-483C-8717-730F101996DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E9BA8BE-70C7-483C-8717-730F101996DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E9BA8BE-70C7-483C-8717-730F101996DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EAE4106F-DFB5-483C-97E5-1CB6A1EF8D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAE4106F-DFB5-483C-97E5-1CB6A1EF8D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAE4106F-DFB5-483C-97E5-1CB6A1EF8D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAE4106F-DFB5-483C-97E5-1CB6A1EF8D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C59E89A6-A0D7-49FE-A9B1-2572BDCFA3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C59E89A6-A0D7-49FE-A9B1-2572BDCFA3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59E89A6-A0D7-49FE-A9B1-2572BDCFA3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
