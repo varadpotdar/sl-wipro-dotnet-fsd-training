@@ -23,7 +23,9 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "JavaScriptPractice", "JavaS
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "TypeScriptPractice", "TypeScriptPractice\TypeScriptPractice.njsproj", "{815F9793-588F-40A6-9B40-DFE2B755B164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{488C0A4B-7022-42DC-8ACA-F9522B8BA479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{488C0A4B-7022-42DC-8ACA-F9522B8BA479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "BookStore\BookStore.csproj", "{CE9CCF6F-893D-4420-8876-3E73DB78AB52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{488C0A4B-7022-42DC-8ACA-F9522B8BA479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{488C0A4B-7022-42DC-8ACA-F9522B8BA479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{488C0A4B-7022-42DC-8ACA-F9522B8BA479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9CCF6F-893D-4420-8876-3E73DB78AB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9CCF6F-893D-4420-8876-3E73DB78AB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9CCF6F-893D-4420-8876-3E73DB78AB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9CCF6F-893D-4420-8876-3E73DB78AB52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
