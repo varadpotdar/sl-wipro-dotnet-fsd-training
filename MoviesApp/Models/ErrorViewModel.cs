@@ -1,4 +1,4 @@
-namespace MvcMovie.Models
+namespace MoviesApp.Models
 {
     public class ErrorViewModel
     {
