@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Data;
-using BookStore.Models;
 
 namespace BookStore.Controllers
 {
@@ -18,6 +17,11 @@ namespace BookStore.Controllers
         public BooksController(BookStoreContext context)
         {
             _context = context;
+        }
+
+        public async Task<IActionResult> Test()
+        {
+            return View();
         }
 
         // GET: Books
