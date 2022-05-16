@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqExamples", "LinqExample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotNetDemo", "AdoDotNetDemo\AdoDotNetDemo.csproj", "{88B0BD17-BEA1-4B4F-BC03-1F5893ACBF34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoMvc", "AdoMvc\AdoMvc.csproj", "{CF9672FE-A274-4483-A0F7-BC2F7E65D20F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{88B0BD17-BEA1-4B4F-BC03-1F5893ACBF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88B0BD17-BEA1-4B4F-BC03-1F5893ACBF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88B0BD17-BEA1-4B4F-BC03-1F5893ACBF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9672FE-A274-4483-A0F7-BC2F7E65D20F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9672FE-A274-4483-A0F7-BC2F7E65D20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9672FE-A274-4483-A0F7-BC2F7E65D20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9672FE-A274-4483-A0F7-BC2F7E65D20F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

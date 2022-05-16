@@ -34,8 +34,8 @@ namespace AdoNetConsoleApplication
             //new Program().CreateTable();
             //Console.ReadLine();
 
-            new Program().InsertData();
-            Console.ReadLine();
+            //new Program().InsertData();
+            //Console.ReadLine();
 
             //new Program().ReadData();
             //Console.ReadLine();
@@ -116,8 +116,20 @@ namespace AdoNetConsoleApplication
             using (SqlConnection con = GetSqlConnection())
             {
                 SqlDataAdapter sde = new SqlDataAdapter("Select * from student", con);
+                
                 DataSet ds = new DataSet();
                 sde.Fill(ds);
+                
+                Console.WriteLine($"No. of records in Student table = {ds.Tables[0].Rows.Count}");
+
+                DataTable table = ds.Tables[0];
+
+                table.Rows.Add("201", "Rameez", "rameez@example.com");
+                table.Rows.Add("202", "Sam Nicolus", "sam@example.com");
+                table.Rows.Add("203", "Subramanium", "subramanium@example.com");
+                table.Rows.Add("204", "Ankur Kumar", "ankur@example.com");
+
+                ds.AcceptChanges();
                 
                 Console.WriteLine($"No. of records in Student table = {ds.Tables[0].Rows.Count}");
             }
