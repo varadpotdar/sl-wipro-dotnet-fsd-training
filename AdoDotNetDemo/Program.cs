@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 namespace AdoNetConsoleApplication
 {
@@ -30,19 +31,22 @@ namespace AdoNetConsoleApplication
 
         static void Main(string[] args)
         {
-            new Program().CreateTable();
-            Console.ReadLine();
+            //new Program().CreateTable();
+            //Console.ReadLine();
 
             new Program().InsertData();
             Console.ReadLine();
 
-            new Program().ReadData();
-            Console.ReadLine();
+            //new Program().ReadData();
+            //Console.ReadLine();
 
-            new Program().DeleteData();
+            //new Program().DeleteData();
+            //Console.ReadLine();
+
+            new Program().DataSetDemo();
             Console.ReadLine();
         }
-        
+
         public void CreateTable()
         {
             try
@@ -104,6 +108,18 @@ namespace AdoNetConsoleApplication
             catch (Exception e)
             {
                 Console.WriteLine("OOPs, something went wrong.\n" + e);
+            }
+        }
+
+        public void DataSetDemo()
+        {
+            using (SqlConnection con = GetSqlConnection())
+            {
+                SqlDataAdapter sde = new SqlDataAdapter("Select * from student", con);
+                DataSet ds = new DataSet();
+                sde.Fill(ds);
+                
+                Console.WriteLine($"No. of records in Student table = {ds.Tables[0].Rows.Count}");
             }
         }
     }
