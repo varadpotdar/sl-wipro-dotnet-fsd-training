@@ -37,7 +37,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoMvc", "AdoMvc\AdoMvc.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiDemo", "WebApiDemo\WebApiDemo.csproj", "{E0401E71-3A69-4636-99AE-4398DFC86CF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestDemo", "UnitTestDemo\UnitTestDemo.csproj", "{07A6169C-B54C-4C16-B526-8F36998C6040}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestDemo", "UnitTestDemo\UnitTestDemo.csproj", "{07A6169C-B54C-4C16-B526-8F36998C6040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{FD4A83F5-5D30-4242-81F8-A1989DED6788}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{07A6169C-B54C-4C16-B526-8F36998C6040}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A6169C-B54C-4C16-B526-8F36998C6040}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A6169C-B54C-4C16-B526-8F36998C6040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
