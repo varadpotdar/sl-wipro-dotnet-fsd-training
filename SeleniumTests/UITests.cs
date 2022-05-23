@@ -1,16 +1,32 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
 namespace SeleniumTests
 {
+    [TestFixture]
     public class UITests
     {
+        IWebDriver driver;
+
         [SetUp]
-        public void Setup()
+        public void StartBrowser()
         {
+            // Local Selenium WebDriver
+            
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
         }
 
         [Test]
-        public void Test1()
+        public void GotoUrl()
         {
-            Assert.Pass();
+            driver.Navigate().GoToUrl("https://www.wikipedia.org/");
+        }
+
+        [TearDown]
+        public void close_Browser()
+        {
+            //driver.Quit();
         }
     }
 }
