@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
@@ -15,6 +16,12 @@ namespace SeleniumTests
             
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+        }
+
+        [TearDown]
+        public void CloseBrowser()
+        {
+            driver.Quit();
         }
 
         [Test]
@@ -53,10 +60,52 @@ namespace SeleniumTests
             Console.Write("test case ended ");
         }
 
-        [TearDown]
-        public void CloseBrowser()
+        [Test]
+        public void SLTest()
         {
-            //driver.Quit();
+            driver.Navigate().GoToUrl("https://www.simplilearn.com/");
+            
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(
+                 d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+
+            var searchBox = driver.FindElement(By.Id("header_srch"));
+            Assert.That(searchBox, Is.Not.Null);
+            
+            searchBox.SendKeys("ASP.NET");
+            var searchButton = driver.FindElement(By.ClassName("input-search-btn"));
+            searchButton.Click();
+
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(
+               d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+
+            var footerText = driver.FindElement(By.XPath("//footer[@id='footer']"));
+            Assert.That(footerText, Is.Not.Null);
+
+            var pageTitleExists = driver.PageSource.Contains("Search Simplilearn Online Courses - #1 Certification Bootcamp");
+            Assert.That(pageTitleExists, Is.True);
+        }
+
+        [Test]
+        public void CheckDeadLinks()
+        {
+            driver.Navigate().GoToUrl("https://www.simplilearn.com/become-our-trainer");
+            Thread.Sleep(2000);
+
+            IList<IWebElement> links = driver.FindElements(By.TagName("a"));
+            foreach (IWebElement link in links)
+            {
+                var url = link.GetAttribute("href");
+                IsLinkWorking(url);
+            }
+        }
+
+        private void IsLinkWorking(string url)
+        {
+            //if working
+            Console.WriteLine("Working");
+
+            //if not working
+            Console.WriteLine("Not working");
         }
     }
 }
