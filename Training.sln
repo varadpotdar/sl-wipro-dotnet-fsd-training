@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiDemo", "WebApiDemo\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestDemo", "UnitTestDemo\UnitTestDemo.csproj", "{07A6169C-B54C-4C16-B526-8F36998C6040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{FD4A83F5-5D30-4242-81F8-A1989DED6788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{FD4A83F5-5D30-4242-81F8-A1989DED6788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowTests", "SpecFlowTests\SpecFlowTests.csproj", "{82147BDA-3C20-40D6-88E3-C48F14351830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD4A83F5-5D30-4242-81F8-A1989DED6788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82147BDA-3C20-40D6-88E3-C48F14351830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82147BDA-3C20-40D6-88E3-C48F14351830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82147BDA-3C20-40D6-88E3-C48F14351830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82147BDA-3C20-40D6-88E3-C48F14351830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
