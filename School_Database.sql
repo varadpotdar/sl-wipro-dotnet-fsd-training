@@ -1,3 +1,10 @@
+This section will guide you to:
+
+Create a database called School.
+
+Create tables for Student, Class, and Subjects in the database.
+
+
 /****** Script for SelectTopNRows command from SSMS  ******/
  use [School]
  insert into Student (ID,Name,Address, Email,Class) values ('1','Tom', 'some address', 'tom@email.com','7a');
