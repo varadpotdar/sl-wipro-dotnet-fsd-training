@@ -1,0 +1,50 @@
+{
+  "productList": [
+    {
+      "productName": "Mobile",
+      "category": "Electronics",
+      "freshness": "Refurbished",
+      "price": "5000",
+      "comment": "Samsung",
+      "date": "2022-03-07T18:30:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "Pinnaple",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": "45",
+      "comment": "organic",
+      "date": "2022-03-14T18:30:00.000Z",
+      "id": 7
+    },
+    {
+      "productName": "Saurab",
+      "category": "Electronics",
+      "freshness": "Brand New",
+      "price": "1000000",
+      "comment": "organic",
+      "date": "2022-04-05T18:30:00.000Z",
+      "id": 9
+    },
+    {
+      "productName": "Laptop",
+      "category": "Electronics",
+      "freshness": "Brand New",
+      "price": "56000",
+      "comment": "HP/DELL",
+      "date": "2022-05-22T18:30:00.000Z",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
