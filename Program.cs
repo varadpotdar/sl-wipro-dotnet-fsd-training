@@ -1,29 +1,37 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SchoolManagement.Data;
+using SchoolManagement.Data.Services;
 
-namespace Phase1_ReadData
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AddDbContext>(options =>
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 
-            string filepath = @"C:\Users\Admin\source\repos\Phase1_ReadData\test.txt";
+});
+builder.Services.AddTransient<StudentsService>();
+var app = builder.Build();
 
-           // string[] lines = File.ReadAllLines(filepath);
-            List<string> lines = new List<string>();
-            lines = File.ReadAllLines(filepath).ToList();
-            foreach(string line in lines)
-            {
-                Console.WriteLine(line);
-            }
-            lines.Add("Varad, Div-A, 12, varad@gmail.com");
-            File.WriteAllLines(filepath,lines);
-            Console.ReadLine();
-        }
-    }
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+AppDbInitializer.seed(app);
+
+app.MapControllers();
+
+app.Run();

@@ -1,8 +1,7 @@
-﻿namespace SchoolManagement.Data.Models
+﻿namespace SchoolManagement.Data.ViewModels
 {
-    public class Student
+    public class StudentsVM
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }

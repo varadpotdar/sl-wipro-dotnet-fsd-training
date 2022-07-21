@@ -1,126 +1,57 @@
-﻿using Phase3proj.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SchoolManagement.Data.Services;
+using SchoolManagement.Data.ViewModels;
 
-namespace Phase3proj.Controllers
+namespace SchoolManagement.Controllers
 {
-    public class StudentController : ApiController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class StudentController : ControllerBase
     {
-        [Route("api/student/names")]
-        public IHttpActionResult Get()
+        public StudentsService _studentsService;
+
+        public StudentController(StudentsService studentsService)
         {
-            IList<StudentViewModel> students = null;
-
-            using (var ctx = new school1Entities())
-            {
-                students = ctx.Students
-                            .Select(s => new StudentViewModel()
-                            {
-                                Name = s.Name,
-                            }).ToList<StudentViewModel>();
-            }
-
-            if (students.Count == 0)
-            {
-                return NotFound();
-            }
-
-            return Ok(students);
+            _studentsService = studentsService;
         }
 
-        public IHttpActionResult GetAllStudents()
+        [HttpGet("get-all-students")]
+        public IActionResult GetAllStudents()
         {
-            IList<StudentViewModel> students = null;
-
-            using (var ctx = new school1Entities())
-            {
-                students = ctx.Students
-                            .Select(s => new StudentViewModel()
-                            {
-                                ID = s.ID,
-                                Name = s.Name,
-                                Email = s.Email,
-                                Class = s.Class,
-                                Address = s.Address
-                            }).ToList<StudentViewModel>();
-            }
-
-            if (students.Count == 0)
-            {
-                return NotFound();
-            }
-
-            return Ok(students);
+            var allStudents = _studentsService.GetStudents();
+            return Ok(allStudents);
         }
 
-        public IHttpActionResult PostNewStudent(StudentViewModel student)
+        [HttpGet("get-students-by-id/{id}")]
+        public IActionResult GetStudentsById(int id)
         {
-            if (!ModelState.IsValid)
-                return BadRequest("Invalid data.");
+            var Students = _studentsService.GetStudentsById(id);
+            return Ok(Students);
+        }
 
-            using (var ctx = new school1Entities())
-            {
-                ctx.Students.Add(new Student()
-                {
-                    Name = student.Name,
-                    Email = student.Email,
-                    Address = student.Address,
-                    Class = student.Class
-                });
+        [HttpPost("add-student")]
 
-                ctx.SaveChanges();
-            }
+       public IActionResult AddStudent([FromBody] StudentsVM student)
+        {
+            _studentsService.AddStudent(student);
+            return Ok();
+        }
 
+        [HttpPut("update-student-by-id/{id}")]
+        public IActionResult UpdateStudentById(int id, [FromBody] StudentsVM students)
+        {
+            var UpdateStudent = _studentsService.UpdateStudentById(id, students);
+            return Ok(UpdateStudent);
+        }
+
+        [HttpDelete("delete-by-id/{id}")]
+        public IActionResult DeleteStudentById(int id)
+        {
+            _studentsService.DeleteStudentById(id);
             return Ok();
         }
 
 
-        public IHttpActionResult Put(StudentViewModel student)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest("Not a valid model");
-
-            using (var ctx = new school1Entities())
-            {
-                var existingStudent = ctx.Students.Where(s => s.ID == student.ID)
-                                                        .FirstOrDefault<Student>();
-
-                if (existingStudent != null)
-                {
-                    existingStudent.Name = student.Name;
-                    existingStudent.Address = student.Address;
-                    existingStudent.Email = student.Email;
-                    existingStudent.Class = student.Class;
-
-                    ctx.SaveChanges();
-                }
-                else
-                {
-                    return NotFound();
-                }
-            }
-
-            return Ok();
-        }
-
-        [HttpDelete]
-        public IHttpActionResult Delete(int id)
-        {
-            if (id <= 0)
-                return BadRequest("Not a valid student id");
-
-            using (var ctx = new school1Entities())
-            {
-                var student = ctx.Students
-                    .Where(s => s.ID == id)
-                    .FirstOrDefault();
-
-                ctx.Entry(student).State = System.Data.Entity.EntityState.Deleted;
-                ctx.SaveChanges();
-            }
-
-            return Ok();
-        }
     }
 }
